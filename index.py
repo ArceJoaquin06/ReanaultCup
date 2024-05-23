@@ -18,5 +18,13 @@ def Dt():
 def Planner():
     return render_template('Planillero.html')
 
+@app.route('/player')
+def Player():
+    return render_template('Jugadores.html')
+
+@app.route('/watcher')
+def Watcher():
+    return render_template('Observadores.html')
+
 if __name__ == '__main__':
     app.run(debug=True, host='127.0.0.2', port=3500)
