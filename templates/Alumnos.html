@@ -9,24 +9,28 @@
 </head>
 <body>
     <main>
-        <h1>Copa Renault:<h1>
-            <h3>Que vas a hacer:</h3>
-            <div class="card" style="width: 18rem;">
-                <img src="https://aquimediosdecomunicacion.com/wp-content/uploads/2021/02/futbol-generico.jpg" class="card-img-top" alt="">
-                <div class="card-body --bs-danger-border-subtle">
-                  <h5 class="card-title">Jugador</h5>
-                  <p class="card-text">Entra y revisa los horarios de partidos de tu equipo.</p>
-                  <a href="{{ url_for('Player')}}" class="btn btn-success">Jugador</a>
+        <h1 class="fs-1 d-grid col-4 mx-auto">Copa Renault:<h1>
+            <h3 class="fs-3 d-grid col-4 mx-auto">Que vas a hacer:</h3>
+            <div class="row row-cols-1 row-cols-md-3 row-cols-sm-12 g-4" style="padding-left: 10%;">
+              <div class="col">
+                <div class="card mb-3 col-sm-6 mb-3 mb-sm-" style="width: 18rem;">
+                  <img src="https://aquimediosdecomunicacion.com/wp-content/uploads/2021/02/futbol-generico.jpg" class="card-img-top" alt="">
+                  <div class="card-body --bs-danger-border-subtle">
+                    <h5 class="card-title">Jugador</h5>
+                    <p class="card-text">Entra y revisa los horarios de partidos de tu equipo.</p>
+                    <a href="{{ url_for('Player')}}" class="btn btn-success">Jugador</a>
+                  </div>
+                </div>
+                <div class="card mb-3 col-sm-6 mb-3 mb-sm-" style="width: 18rem;">
+                  <img src="https://media.tycsports.com/files/2022/04/29/421414/argentina-fans_1440x810_wmk.webp" class="card-img-top" alt="">
+                  <div class="card-body --bs-danger-border-subtle">
+                    <h5 class="card-title">Espectador</h5>
+                    <p class="card-text">Entra y revisa el horario de partidos de los equipos.</p>
+                    <a href="{{ url_for('Watcher')}}" class="btn btn-danger">Espectador</a>
+                  </div>
                 </div>
               </div>
-              <div class="card" style="width: 18rem;">
-                <img src="https://media.tycsports.com/files/2022/04/29/421414/argentina-fans_1440x810_wmk.webp" class="card-img-top" alt="">
-                <div class="card-body --bs-danger-border-subtle">
-                  <h5 class="card-title">Espectador</h5>
-                  <p class="card-text">Entra y revisa el horario de partidos de los equipos.</p>
-                  <a href="{{ url_for('Watcher')}}" class="btn btn-danger">Espectador</a>
-                </div>
-              </div>
+            </div>
     </main>
 </body>
 </html>

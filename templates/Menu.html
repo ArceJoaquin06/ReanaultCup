@@ -3,21 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/Menu.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="icon" href="https://logodownload.org/wp-content/uploads/2014/09/renault-logo-7.png">
     <title>Menú</title>
 </head>
 <body>
     <main>
-        <h1 class="fs-1 d-grid col-4 mx-auto">Que rol tenes en la copa:<h1>
-            <div> </div>
-                <div class="row row-cols-1 row-cols-md-3 g-4" style="padding-left: 7%;">
-                    <div class="col">
+        <h1 class="fs-1 d-grid col-4 mx-auto" id="titulo">Copa Renault</h1>
+        <h2 class="fs-2 d-grid col-4 mx-auto" id="titulo1">Que rol tenes en la copa:<h2>
+        
+        <div class="row row-cols-1 row-cols-md-3 row-cols-sm-12 g-4" style="padding-left: 10%;">
+          <div class="col">
             <div class="card text-bg-success mb-3 col-sm-6 mb-3 mb-sm-" style="width: 25rem;">
                 <img src="https://lh4.googleusercontent.com/proxy/BGFzVn3ZEYmJ0sORUz9VC_JcXDi-adaCfxsO6ZRWaq_o-L0j1BoEmHSkThZaADVGDJp1Lj0RU6y44pBrqiASZA5uUtty36O3yzrleYhsJZC9al0Z26YeubD4cO7jNSPjs1kos4FvLlxzsQQ" class="card-img-top" alt="">
                 <div class="card-body --bs-danger-border-subtle">
                   <h5 class="card-title">Alumnos o Espectadores</h5>
-                  <p class="card-text">Ingresa a la pagina web de la copa Renault como alumno o espectador.</p>
+                  <p class="card-text" id="texto1">Ingresa a la pagina web de la copa Renault como alumno o espectador.</p>
                   <a href="{{ url_for('Students')}}" class="btn btn-dark d-grid col-8 mx-auto">Alumno/Espectador</a>
                 </div>
               </div>
@@ -27,7 +29,7 @@
                 <img src="https://media.istockphoto.com/id/638328236/es/foto/manager-funciona-en-tableta.jpg?s=612x612&w=0&k=20&c=4Iry78llr4uHMc-SUx7Kd8dTa32JSyuZQttLULmWnOg=" class="card-img-top" alt="">
                 <div class="card-body --bs-danger-border-subtle">
                   <h5 class="card-title">Director Tecnico</h5>
-                  <p class="card-text">Ingresa a la pagina web de la copa Renault como Director Tecnico de tu equipo.</p>
+                  <p class="card-text" id="texto1">Ingresa a la pagina web de la copa Renault como Director Tecnico de tu equipo.</p>
                   <a href="{{ url_for('Dt')}}" class="btn btn-dark d-grid col-8 mx-auto">Director Tecnico</a>
                 </div>
               </div>
@@ -37,12 +39,13 @@
                 <img src="https://elonce-media.elonce.com/fotos-nuevo/2022/05/18/o_1652910970.jpg" class="card-img-top" alt="">
                 <div class="card-body --bs-danger-border-subtle">
                   <h5 class="card-title">Planillero</h5>
-                  <p class="card-text">Ingresa a la pagina web de la copa Renault como Planillero y diviertete.</p>
+                  <p class="card-text" id="texto1">Ingresa a la pagina web de la copa Renault como Planillero y diviertete.</p>
                   <a href="{{ url_for('Planner')}}" class="btn btn-dark d-grid col-8 mx-auto">Planillero</a> 
                 </div>
               </div>
             </div>
-            </div>
+          </div>
+        </div>
     </main>
 </body>
 </html>
