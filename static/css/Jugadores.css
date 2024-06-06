@@ -1,0 +1,14 @@
+#titulo-ju{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    color: white;
+}
+
+#cuerpo{
+    background-image: url("https://static.vecteezy.com/system/resources/previews/003/462/345/non_2x/abstract-black-background-with-yellow-and-black-geometric-pattern-vector.jpg");
+    background-size: cover; 
+}
+
+#carta{
+    max-width: 300px;
+}
