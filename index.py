@@ -18,9 +18,9 @@ def Dt():
 def Planner():
     return render_template('Planillero.html')
 
-@app.route('/player')
-def Player():
-    return render_template('Jugadores.html')
+@app.route('/football')
+def Football():
+    return render_template('Futbol.html')
 
 @app.route('/watcher')
 def Watcher():

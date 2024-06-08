@@ -1,14 +1,28 @@
-#titulo-ju{
+#titulo-ju {
     padding-top: 50px;
     padding-bottom: 50px;
     color: white;
 }
 
-#cuerpo{
+#cuerpo {
     background-image: url("https://static.vecteezy.com/system/resources/previews/003/462/345/non_2x/abstract-black-background-with-yellow-and-black-geometric-pattern-vector.jpg");
     background-size: cover; 
 }
 
-#carta{
+#carta {
     max-width: 300px;
+    margin: 20px auto;
+    background-color: white;
+}
+
+#carta1 {
+    max-width: 900px;
+    margin: 20px auto;
+    background-color: white;
+}
+
+.card-header-custom {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+    font-weight: bold;
 }
