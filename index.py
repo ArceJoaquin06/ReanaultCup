@@ -22,9 +22,9 @@ def Volley():
 def Football():
     return render_template('Futbol.html')
 
-@app.route('/watcher')
-def Watcher():
-    return render_template('Observadores.html')
+@app.route('/register')
+def Register():
+    return render_template('Registro.html')
 
 if __name__ == '__main__':
     app.run(debug=True, host='127.0.0.2', port=3500)
