@@ -10,13 +10,13 @@ def principal():
 def Students():
     return render_template('Alumnos.html')
 
-@app.route('/Dt')
-def Dt():
-    return render_template('DT.html')
+@app.route('/basket')
+def Basket():
+    return render_template('Basquet.html')
 
-@app.route('/planner')
-def Planner():
-    return render_template('Planillero.html')
+@app.route('/volley')
+def Volley():
+    return render_template('Voley.html')
 
 @app.route('/football')
 def Football():
