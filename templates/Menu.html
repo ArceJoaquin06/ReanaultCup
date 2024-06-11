@@ -9,6 +9,15 @@
     <title>Menú</title>
 </head>
 <body>
+    <div id="text" data-text="Copa Renault 2025">Copa Renault 2025</div>
+    <script type="text/javascript">
+      var text = document.getElementById('text')
+      var shadow = '';
+      for(var i = 0; i < 30; i++){
+        shadow +=(shadow? ',':'')+ -i*1+'px '+ i*1+'px 0 #d9d9d9';
+      }
+      text.style.textShadow = shadow;
+    </script>
     <main>
         <h1 class="fs-1 d-grid col-4 mx-auto" id="titulo">Copa Renault</h1>
         <h2 class="fs-2 d-grid col-4 mx-auto" id="titulo1">Selecciona un deporte: <h2>
