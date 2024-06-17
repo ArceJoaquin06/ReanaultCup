@@ -1,12 +1,14 @@
 #titulo-ju {
-    padding-top: 50px;
+    padding-top: 100px;
     padding-bottom: 50px;
     color: white;
 }
 
-#cuerpo {
-    background-image: url("https://static.vecteezy.com/system/resources/previews/003/462/345/non_2x/abstract-black-background-with-yellow-and-black-geometric-pattern-vector.jpg");
-    background-size: cover; 
+body#cuerpo {
+    background-image: url('../img/fondo-futbol.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 #carta {
@@ -25,4 +27,10 @@
     background-color: #f8f9fa;
     border-bottom: 1px solid #dee2e6;
     font-weight: bold;
+}
+
+#registro{
+    padding-bottom: 25px;
+    padding-left: 450px;
+    padding-right: 450px;
 }

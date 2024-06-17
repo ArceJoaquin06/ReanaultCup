@@ -1,26 +1,27 @@
-*{
-    margin: 0;
-    padding: 0;
-}
-body{
+body {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     background: #f1f1f1;
-    overflow: hidden;
+    position: relative; /* Cambiado de overflow: hidden a position: relative */
 }
-#text{
-    position: relative;
+
+#text {
+    position: absolute; /* Cambiado a absolute */
+    top: 50%; /* Centrado verticalmente */
+    left: 50%; /* Centrado horizontalmente */
+    transform: translate(-50%, -50%) rotate(-28deg) skew(25deg); /* Centrado y transformado */
     color: #fff;
     font-weight: 700;
     font-size: 12em;
     line-height: 0.9em;
     letter-spacing: 2px;
     text-align: center;
-    transform: rotate(-28deg) skew(25deg);
+    z-index: -1; /* Asegura que esté detrás del contenido */
 }
-#text::before{
+
+#text::before {
     content: attr(data-text);
     position: absolute;
     top: 30px;
@@ -28,19 +29,29 @@ body{
     color: rgba(0,0,0,0.3);
     text-shadow: none;
     filter: blur(8px);
-    z-index: -1;
+    z-index: -1; /* Asegura que esté detrás del contenido */
 }
-#titulo1{
+
+#titulo1 {
     padding-top: 50px;
     padding-bottom: 50px;
     text-align: center;
+    z-index: 1; /* Asegura que esté delante del texto de fondo */
+    position: relative; /* Añadido para trabajar con z-index */
 }
 
-#titulo{
+#titulo {
     text-align: center;
     padding-top: 50px;
+    z-index: 1; /* Asegura que esté delante del texto de fondo */
+    position: relative; /* Añadido para trabajar con z-index */
 }
 
-#texto1{
+#texto1 {
     padding-bottom: 50px;
+}
+
+.card {
+    position: relative; /* Añadido para trabajar con z-index */
+    z-index: 1; /* Asegura que las cartas estén delante del texto de fondo */
 }
