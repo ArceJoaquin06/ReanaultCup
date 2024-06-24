@@ -1,4 +1,23 @@
-header{
+#title-in{
+    text-align: center; /* Centra el texto horizontalmente */
+    margin-top: 20px; /* Ejemplo: Ajusta el margen superior según sea necesario */
+    padding-top: 40px;
+}
+
+#text-in{
+    text-align: center;
+    padding-left: 275px;
+    padding-right: 275px;
+    padding-top: 40px;
+}
+
+#content-in{
+    color: white;
+}
+
+#cuerpo-in{
+    background-image: url("https://media.istockphoto.com/id/1297247938/es/foto/blanco-oro-fondo-degradado-textura-suave-dorado-con-tecnolog%C3%ADa-de-luz-diagonal-gris-y-blanco.webp?b=1&s=170667a&w=0&k=20&c=A5X_lD3lglEuh_dMpAjJBEX2ML5V2_UEE1gyRqyMWSo=");
+    background-size: cover; 
 }
 
 .wave{
