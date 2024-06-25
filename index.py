@@ -26,6 +26,10 @@ def Football():
 def Register():
     return render_template('Registro.html')
 
+@app.route('/Eliminatorias')
+def Eliminatorias():
+    return render_template('Eliminatorias.html')
+
 @app.route('/court')
 def Court():
     return render_template('Canchas.html')
