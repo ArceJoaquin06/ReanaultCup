@@ -1,0 +1,35 @@
+#titulo-ju {
+    padding-top: 50px;
+    color: white;
+}
+
+body#cuerpo {
+    background-image: url('../img/fondo-futbol.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#carta {
+    max-width: 300px;
+    margin: 20px auto;
+    background-color: white;
+}
+
+#carta1 {
+    max-width: 900px;
+    margin: 20px auto;
+    background-color: white;
+}
+
+.card-header-custom {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+    font-weight: bold;
+}
+
+#registro{
+    padding-bottom: 25px;
+    padding-left: 450px;
+    padding-right: 450px;
+}
