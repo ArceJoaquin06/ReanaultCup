@@ -2,13 +2,20 @@
     text-align: center; /* Centra el texto horizontalmente */
     margin-top: 20px; /* Ejemplo: Ajusta el margen superior según sea necesario */
     padding-top: 40px;
+    padding-bottom: 35px;
+    color: rgb(223, 196, 45);
 }
 
 #text-in{
     text-align: center;
-    padding-left: 275px;
-    padding-right: 275px;
-    padding-top: 40px;
+    padding-left: 225px;
+    padding-right: 225px;
+    padding-top: 10px;
+    padding-bottom: 50px;
+}
+
+#subtitle-in{
+    text-align: center;
 }
 
 #content-in{
@@ -20,8 +27,19 @@
     background-size: cover; 
 }
 
-.wave{
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+.carousel {
+    width: 80%; /* Ajusta el ancho del carrusel */
+    max-width: 600px; /* Ajusta el ancho máximo del carrusel */
+    margin: auto; /* Centra el carrusel horizontalmente */
+    margin-bottom: 40px; /* Ajusta este valor según el tamaño del espacio que necesites */
+}
+
+.carousel-inner {
+    border-radius: 10px; /* Bordes redondeados para el carrusel */
+}
+
+.carousel-item img {
+    height: 300px; /* Ajusta la altura de las imágenes */
+    object-fit: cover; /* Ajusta las imágenes para que cubran el área sin deformarse */
+    border-radius: 10px; /* Bordes redondeados para las imágenes */
 }
