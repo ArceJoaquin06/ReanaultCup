@@ -8,8 +8,8 @@
 
 .navbar-0 {
     background-color: #333;
-    padding: 5px 0; /* Reduce el padding para hacer la barra más pequeña */
-    margin-bottom: 10px; /* Reduce el margen inferior para subir un poco la barra */
+    padding: 5px 0;
+    margin-bottom: 10px;
     width: 100%;
     position: fixed;
     top: 0;
@@ -25,18 +25,18 @@
 
 .navbar-brand {
     display: flex;
-    align-items: center; /* Alinea el logo y el texto verticalmente */
+    align-items: center;
 }
 
 .navbar-brand img {
-    width: 40px; /* Ajusta el tamaño del logo */
-    height: 40px; /* Ajusta el tamaño del logo */
+    width: 40px;
+    height: 40px;
 }
 
 .navbar-brand span {
-    color: #fff; /* Asegúrate de que el texto sea visible */
-    font-size: 1.25rem; /* Ajusta el tamaño del texto según sea necesario */
-    margin-left: 10px; /* Espacio entre el logo y el texto */
+    color: #fff;
+    font-size: 1.25rem;
+    margin-left: 10px;
 }
 
 .navbar-nav {
@@ -62,7 +62,7 @@
 }
 
 .container {
-    margin-top: 70px; /* Ajusta según la altura de tu navbar */
+    margin-top: 70px;
 }
 
 #nav-text:hover {
