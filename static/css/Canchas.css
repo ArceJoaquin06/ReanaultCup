@@ -5,3 +5,12 @@
 .subtititulo-canchas{
     text-align: center;
 }
+
+.Img-Canchas{
+    width: 300px;
+    height: 300px;
+    border: 2px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
