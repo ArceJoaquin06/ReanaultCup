@@ -12,10 +12,15 @@ class User(db.Model):
     username = db.Column(db.String(80), primary_key=True)
     password = db.Column(db.String(120), unique=True, nullable=False)
 
-class Plantilla(db.Model):
+class Equipos(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(80), unique=True, nullable=False)
-    email = db.Column(db.String(120), unique=True, nullable=False)
+    deporte_equipo = db.Column(db.String(50), unique=True, nullable=False)
+    puntos_equipo = db.Column(db.Integer, nullable=False)
+    grupo_equipo = db.Column(db.String(5), nullable=False)
+    partidos_empatados = db.Column(db.Integer, nullable=False)
+    partidos_ganados = db.Column(db.Integer, nullable=False)
+    partidos_perdidos = db.Column(db.Integer, nullable=False)
+    
 
 @app.route('/')
 def principal():
