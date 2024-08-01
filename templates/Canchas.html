@@ -1,17 +1,23 @@
 {% extends './Navbar.html' %}
 
-{%block title%}Canchas{%endblock%}
+{% block title %}Canchas{% endblock %}
 
 {% block extra_head %}
-        <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3439/3439979.png">
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/Canchas.css') }}">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3439/3439979.png">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Canchas.css') }}">
 {% endblock %}
 
-{%block body%}
-    <body>
-        <h1 id="titulo-canchas">Canchas de la Copa Renault</h1>
-        <h3 id="subtititulo-canchas">Chequea la ubicacion de las canchas en las que juega tu equipo</h3>
-
-        <img src="../static/img/imagen.PNG" class="Img-Canchas">
-    </body>
-{%endblock%}
+{% block body %}
+    <div class="fondo_canchas">
+        <h1 class="titulo-canchas">Canchas de la Copa Renault</h1>
+        <h3 class="subtititulo-canchas">Chequea la ubicación de las canchas en las que juega tu equipo</h3>
+        <img src="https://i.imgur.com/lacTgcu.png" class="Img-Canchas">
+        <br>
+        <div class="carta">
+            <h4>Cada color indica el deporte de esa cancha</h4>
+            <h4>El color Rojo indica canchas de Voley</h4>
+            <h4>El color Amarillo indica canchas de Basket</h4>
+            <h4>El color Verde indica canchas de Futbol</h4>
+        </div>
+    </div>
+{% endblock %}
