@@ -4,16 +4,15 @@ import os
 
 app = Flask(__name__)
 
-"""
-# Configuracion de la base de datos
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('mysql://u4drvttmsnz01lkc:fea4CHjF009G1cs0NAqi@bnaj0hkpwqpowwit5aew-mysql.services.clever-cloud.com:3306/bnaj0hkpwqpowwit5aew') or 'postgresql+psycopg2://u4drvttmsnz01lkc:fea4CHjF009G1cs0NAqi@bnaj0hkpwqpowwit5aew-mysql.services.clever-cloud.com:3306/bnaj0hkpwqpowwit5aew'
+# Configuración de la base de datos
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('Conection Uri: mysql://u4drvttmsnz01lkc:fea4CHjF009G1cs0NAqi@bnaj0hkpwqpowwit5aew-mysql.services.clever-cloud.com:3306/bnaj0hkpwqpowwit5aew') or 'mysql://u4drvttmsnz01lkc:fea4CHjF009G1cs0NAqi@bnaj0hkpwqpowwit5aew-mysql.services.clever-cloud.com/bnaj0hkpwqpowwit5aew'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(80), primary_key=True)
+    username = db.Column(db.String(80), unique=True, nullable=False)
     password = db.Column(db.String(120), unique=True, nullable=False)
 
 class Equipos(db.Model):
@@ -25,11 +24,10 @@ class Equipos(db.Model):
     partidos_ganados = db.Column(db.Integer, nullable=False)
     partidos_perdidos = db.Column(db.Integer, nullable=False)
 
-# Creacion de tablas antes del primer request
+# Creación de tablas antes del primer request
 @app.before_first_request
 def create_tables():
     db.create_all()
-"""
 
 @app.route('/')
 def principal():
@@ -68,6 +66,4 @@ def Canteen():
     return render_template('Cantina.html')
 
 if __name__ == '__main__':
-    #with app.app_context():
-        #db.create_all()  # Crear las tablas en la base de datos
     app.run(debug=True, port=3500)

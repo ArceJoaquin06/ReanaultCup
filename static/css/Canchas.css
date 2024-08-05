@@ -16,16 +16,21 @@
 }
 
 .fondo_canchas {
-    margin: 0;
-    padding: 0;
-    height: 100vh;
     background-image: url('https://img.freepik.com/fotos-premium/diseno-fondo-abstracto-rough-soft-color-naranja-amarillo_851755-67115.jpg?size=626&ext=jpg');
     background-size: cover;
     background-position: center;
+    background-attachment: fixed; /* Para enderezar la imagen :) */
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    width: 100vw;
+    display: flex; /* Añadido para convertir el contenedor en un flexbox */
+    flex-direction: column; /* Cambiado a columna para alinear verticalmente */
+    align-items: center; /* Centrado horizontalmente */
+    justify-content: flex-start; /* Centrado verticalmente */
     background-repeat: no-repeat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
 }
 
 .carta {
@@ -38,3 +43,4 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     align-self: center;
 }
+
