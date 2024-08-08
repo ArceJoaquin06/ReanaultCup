@@ -51,7 +51,26 @@ body {
     padding-bottom: 50px;
 }
 
+.card-container {
+    display: flex; 
+    justify-content: center; 
+    gap: 30px; 
+    padding: 20px; 
+}
+
 .card {
-    position: relative; /* Añadido para trabajar con z-index */
-    z-index: 1; /* Asegura que las cartas estén delante del texto de fondo */
+    width: 400px;
+    height: 500px;
+    border-radius: 7px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    transition: all 0.6s ease-in-out; 
+}
+
+.card:hover {
+    transform: translateY(-20px); 
+}
+
+.card-container:hover > :not(:hover) {
+    opacity: 0.5;
 }

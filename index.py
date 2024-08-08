@@ -1,8 +1,9 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect, url_for, flash
 from flask_sqlalchemy import SQLAlchemy
 import os
 
 app = Flask(__name__)
+app.secret_key = 'supersecretkey'  # Necesario para usar flash messages
 
 # Configuración de la base de datos
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('Conection Uri: mysql://u4drvttmsnz01lkc:fea4CHjF009G1cs0NAqi@bnaj0hkpwqpowwit5aew-mysql.services.clever-cloud.com:3306/bnaj0hkpwqpowwit5aew') or 'mysql://u4drvttmsnz01lkc:fea4CHjF009G1cs0NAqi@bnaj0hkpwqpowwit5aew-mysql.services.clever-cloud.com/bnaj0hkpwqpowwit5aew'
@@ -24,9 +25,7 @@ class Equipos(db.Model):
     partidos_ganados = db.Column(db.Integer, nullable=False)
     partidos_perdidos = db.Column(db.Integer, nullable=False)
 
-# Creación de tablas antes del primer request
-@app.before_first_request
-def create_tables():
+with app.app_context():
     db.create_all()
 
 @app.route('/')
@@ -64,6 +63,20 @@ def Court():
 @app.route('/canteen')
 def Canteen():
     return render_template('Cantina.html')
+
+@app.route('/login', methods=['POST'])
+def login():
+    username = request.form['username']
+    password = request.form['password']
+    
+    user = User.query.filter_by(username=username, password=password).first()
+
+    if user:
+        flash('Login successful!', 'success')
+        return redirect(url_for('principal'))
+    else:
+        flash('Invalid username or password', 'danger')
+        return redirect(url_for('Register'))
 
 if __name__ == '__main__':
     app.run(debug=True, port=3500)

@@ -23,39 +23,20 @@ Deportes
 <main>
     <h1 class="fs-1 d-grid col-4 mx-auto" id="titulo">Copa Renault</h1>
     <h2 class="fs-2 d-grid col-4 mx-auto" id="titulo1">Selecciona un deporte: <h2>
-    
-    <div class="row row-cols-1 row-cols-md-3 row-cols-sm-12 g-4" style="padding-left: 10%;">
-      <div class="col">
-        <div class="card text-bg-success mb-3 col-sm-6 mb-3 mb-sm-" style="width: 25rem;">
-            <img src="https://lh4.googleusercontent.com/proxy/BGFzVn3ZEYmJ0sORUz9VC_JcXDi-adaCfxsO6ZRWaq_o-L0j1BoEmHSkThZaADVGDJp1Lj0RU6y44pBrqiASZA5uUtty36O3yzrleYhsJZC9al0Z26YeubD4cO7jNSPjs1kos4FvLlxzsQQ" class="card-img-top" alt="">
-            <div class="card-body --bs-danger-border-subtle">
-              <h5 class="card-title">Futbol</h5>
-              <p class="card-text" id="texto1">Ingresa a la pagina web de la copa Renault y revisa los horarios de Futbol.</p>
-              <a href="{{ url_for('Football') }}" class="btn btn-dark d-grid col-8 mx-auto">Futbol</a>
-            </div>
-          </div>
+      <div class="card-container">
+        <div class="card">
+            <img src="../static/img/Img_3_deportes.jpg" class="card-img-top" alt="">
+            <a href="{{ url_for('Football') }}" class="btn btn-transperent d-grid col-12 mx-auto">Futbol</a>
         </div>
-        <div class="col">
-          <div class="card text-bg-danger mb-3 col-sm-6 mb-3 mb-sm-" style="width: 25rem;">
-            <img src="https://img.europapress.es/fotoweb/fotonoticia_20120216194152_1200.jpg" class="card-img-top" alt="">
-            <div class="card-body --bs-danger-border-subtle">
-              <h5 class="card-title">Basquet</h5>
-              <p class="card-text" id="texto1">Ingresa a la pagina web de la copa Renault y revisa los horarios de Basquet.</p>
-              <a href="{{ url_for('Basket') }}" class="btn btn-dark d-grid col-8 mx-auto">Basquet</a>
-            </div>
-          </div>
+        <div class="card">
+            <img src="../static/img/Img_2_deportes.jpg" class="card-img-top" alt="">
+            <a href="{{ url_for('Basket') }}" class="btn btn-transperent d-grid col-12 mx-auto">Basquet</a>
         </div>
-        <div class="col">
-          <div class="card text-bg-warning mb-3 col-sm-6 mb-3 mb-sm-" style="width: 25rem;">
-            <img src="https://www.888sport.es/blog/sites/newblog.888sport.es/files/styles/twitter/public/2021-03/posiciones-voleibol.jpg" class="card-img-top" alt="">
-            <div class="card-body --bs-danger-border-subtle">
-              <h5 class="card-title">Voley</h5>
-              <p class="card-text" id="texto1">Ingresa a la pagina web de la copa Renault y revisa los horarios de Voley.</p>
-              <a href="{{ url_for('Volley') }}" class="btn btn-dark d-grid col-8 mx-auto">Voley</a> 
-            </div>
-          </div>
+        <div class="card">
+            <img src="../static/img/Img_1_deportes.jpg" class="card-img-top" alt="">
+            <a href="{{ url_for('Volley') }}" class="btn btn-transperent d-grid col-12 mx-auto">Voley</a>
         </div>
-      </div>
     </div>
+    
 </main>
 {% endblock %}

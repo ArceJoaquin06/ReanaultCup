@@ -16,7 +16,7 @@
 }
 
 .fondo_canchas {
-    background-image: url('https://img.freepik.com/fotos-premium/diseno-fondo-abstracto-rough-soft-color-naranja-amarillo_851755-67115.jpg?size=626&ext=jpg');
+    background-image: url('https://img.freepik.com/vector-gratis/fondo-liso-estilo-papel_52683-63751.jpg?size=626&ext=jpg&ga=GA1.1.2008272138.1722902400&semt=ais_hybridg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed; /* Para enderezar la imagen :) */
@@ -28,7 +28,7 @@
     flex-direction: column; /* Cambiado a columna para alinear verticalmente */
     align-items: center; /* Centrado horizontalmente */
     justify-content: flex-start; /* Centrado verticalmente */
-    background-repeat: no-repeat;
+    color: white;
     text-align: center;
     box-sizing: border-box;
 }
