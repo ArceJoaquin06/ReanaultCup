@@ -17,13 +17,12 @@
 
 .fondo_canchas {
     background-image: url('https://img.freepik.com/vector-gratis/fondo-liso-estilo-papel_52683-63751.jpg?size=626&ext=jpg&ga=GA1.1.2008272138.1722902400&semt=ais_hybridg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed; /* Para enderezar la imagen :) */
+    background-size: cover; /* Ajusta la imagen para que cubra toda la pantalla */
+    background-position: center center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-attachment: fixed; /* Mantiene la imagen fija cuando se hace scroll */
+    height: 100vh; /* Asegura que el body ocupe toda la altura de la pantalla */
     margin: 0;
-    padding: 20px;
-    min-height: 100vh;
-    width: 100vw;
     display: flex; /* Añadido para convertir el contenedor en un flexbox */
     flex-direction: column; /* Cambiado a columna para alinear verticalmente */
     align-items: center; /* Centrado horizontalmente */

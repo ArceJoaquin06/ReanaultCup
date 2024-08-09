@@ -52,6 +52,10 @@ def Football():
 def Register():
     return render_template('Registro.html')
 
+@app.route('/signIn')
+def Signin():
+    return render_template('IniciarSesion.html')
+
 @app.route('/Eliminatorias')
 def Eliminatorias():
     return render_template('Eliminatorias.html')
