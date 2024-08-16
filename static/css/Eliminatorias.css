@@ -1,21 +1,23 @@
-#titulo-elim {
+#titulo-elim{
     text-align: center;
     padding-top: 25px;
 }
 
-#subtitulo-elim {
+#subtitulo-elim{
     text-align: center;
     padding-top: 25px;
     padding-bottom: 25px;
 }
 
-#carta2 {
+#carta2{
+    padding-bottom: 30px;
     margin-bottom: 40px;
-    width: 100%;
+    width: 250px;
 }
 
-#carta3 {
+#carta3{
     float: right;
+    padding-bottom: 30px;
     margin-bottom: 40px;
-    width: 100%;
+    width: 250px;
 }
