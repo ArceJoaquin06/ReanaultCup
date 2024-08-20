@@ -1,24 +1,27 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
 from flask_sqlalchemy import SQLAlchemy
+from flask_login import LoginManager, login_user, login_required, logout_user, UserMixin
 import os
 
 app = Flask(__name__)
 app.secret_key = 'supersecretkey'  # Necesario para usar flash messages
 
 # Configuración de la base de datos
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('Conection Uri: mysql://u4drvttmsnz01lkc:fea4CHjF009G1cs0NAqi@bnaj0hkpwqpowwit5aew-mysql.services.clever-cloud.com:3306/bnaj0hkpwqpowwit5aew') or 'mysql://u4drvttmsnz01lkc:fea4CHjF009G1cs0NAqi@bnaj0hkpwqpowwit5aew-mysql.services.clever-cloud.com/bnaj0hkpwqpowwit5aew'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('Conection Uri: mysql://ud9jvwojdhecxorj:Yhm9ZPUXDoaXUX2gpLjV@b0n5dgbft6ikjmsxr1ms-mysql.services.clever-cloud.com:3306/b0n5dgbft6ikjmsxr1ms') or 'mysql://ud9jvwojdhecxorj:Yhm9ZPUXDoaXUX2gpLjV@b0n5dgbft6ikjmsxr1ms-mysql.services.clever-cloud.com:3306/b0n5dgbft6ikjmsxr1ms'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
+login_manager = LoginManager(app)
 
-class User(db.Model):
+class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(80), unique=True, nullable=False)
     password = db.Column(db.String(120), unique=True, nullable=False)
 
 class Equipos(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    deporte_equipo = db.Column(db.String(50), unique=True, nullable=False)
+    nombre_equipo = db.Column(db.String(50), nullable=False)
+    deporte_equipo = db.Column(db.String(50), nullable=False)
     puntos_equipo = db.Column(db.Integer, nullable=False)
     grupo_equipo = db.Column(db.String(5), nullable=False)
     partidos_empatados = db.Column(db.Integer, nullable=False)
@@ -27,6 +30,10 @@ class Equipos(db.Model):
 
 with app.app_context():
     db.create_all()
+
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(int(user_id))
 
 @app.route('/')
 def principal():
@@ -44,9 +51,13 @@ def Basket():
 def Volley():
     return render_template('Voley.html')
 
-@app.route('/football')
+@app.route('/football', methods=['GET'])
 def Football():
-    return render_template('Futbol.html')
+    registros = Equipos.query.all()
+    datos = []
+    for registro in registros:
+        datos.append({"nombre":registro.nombre_equipo, "grupo":registro.grupo_equipo, "pts":registro.puntos_equipo, "pg":registro.partidos_ganados, "pe": registro.partidos_empatados, "pp":registro.partidos_perdidos})
+    return render_template('Futbol.html', datos=datos)
 
 @app.route('/register')
 def Register():
@@ -64,6 +75,11 @@ def Court():
 def Canteen():
     return render_template('Cantina.html')
 
+@app.route('/footballMirror')
+@login_required
+def Mirror():
+    return render_template('FutMirror.html')
+
 @app.route('/login', methods=['POST'])
 def login():
     username = request.form['username']
@@ -72,8 +88,9 @@ def login():
     user = User.query.filter_by(username=username, password=password).first()
 
     if user:
+        login_user(user)
         flash('Login successful!', 'success')
-        return redirect(url_for('principal'))
+        return redirect(url_for('Mirror'))
     else:
         flash('Invalid username or password', 'danger')
         return redirect(url_for('Register'))

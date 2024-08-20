@@ -22,38 +22,43 @@ Futbol
                         <div class="row">
                             <div class="col-4">
                                 <div class="shadow p-3 mb-3 card-header-custom text-bg-warning">Grupo A</div>
-                                <div class="mb-3">Equipo 1</div>
-                                <div class="mb-3">Equipo 2</div>
-                                <div class="mb-3">Equipo 3</div>
-                                <div class="mb-3">Equipo 4</div>
+                                {% for equipo in datos %}
+                                    {% if equipo.grupo == 'A' %}
+                                        <div class="mb-3">{{ equipo.nombre }}</div>
+                                    {% endif %}
+                                {% endfor %}
                             </div>
                             <div class="col-2">
                                 <div class="shadow p-3 mb-3 card-header-custom text-bg-warning">Pts</div>
-                                <div class="mb-3">6</div>
-                                <div class="mb-3">4</div>
-                                <div class="mb-3">4</div>
-                                <div class="mb-3">3</div>
+                                {% for equipo in datos %}
+                                    {% if equipo.grupo == 'A' %}
+                                        <div class="mb-3">{{ equipo.pts }}</div>
+                                    {% endif %}
+                                {% endfor %}
                             </div>
                             <div class="col-2">
                                 <div class="shadow p-3 mb-3 card-header-custom text-bg-warning">PG</div>
-                                <div class="mb-3">2</div>
-                                <div class="mb-3">1</div>
-                                <div class="mb-3">1</div>
-                                <div class="mb-3">1</div>
+                                {% for equipo in datos %}
+                                    {% if equipo.grupo == 'A' %}
+                                        <div class="mb-3">{{ equipo.pg }}</div>
+                                    {% endif %}
+                                {% endfor %}
                             </div>
                             <div class="col-2">
                                 <div class="shadow p-3 mb-3 card-header-custom text-bg-warning">PE</div>
-                                <div class="mb-3">0</div>
-                                <div class="mb-3">1</div>
-                                <div class="mb-3">1</div>
-                                <div class="mb-3">0</div>
+                                {% for equipo in datos %}
+                                    {% if equipo.grupo == 'A' %}
+                                        <div class="mb-3">{{ equipo.pe }}</div>
+                                    {% endif %}
+                                {% endfor %}
                             </div>
                             <div class="col-2">
                                 <div class="shadow p-3 mb-3 card-header-custom text-bg-warning">PP</div>
-                                <div class="mb-3">1</div>
-                                <div class="mb-3">1</div>
-                                <div class="mb-3">1</div>
-                                <div class="mb-3">2</div>
+                                {% for equipo in datos %}
+                                    {% if equipo.grupo == 'A' %}
+                                        <div class="mb-3">{{ equipo.pp }}</div>
+                                    {% endif %}
+                                {% endfor %}
                             </div>
                         </div>
                     </div>
