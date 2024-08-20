@@ -8,6 +8,25 @@
 
 {% block body %}
     <body>
-        Actualización de Datos
-    </body>
+        <main>
+            <section>
+                <div class="container-form">
+                    <form>           
+                        <div>
+                            <label for="id">ID</label>
+                            <input type="number" name="id" id="id" disabled>
+                        </div>
+            
+                        <div>
+                            <label for="nombre">Nombre</label>
+                            <input type="text" name="nombre" id="nombre">
+                        </div>
+                    
+                        <button class="modificar" type="button" onclick="modificar()">Modificar</button>
+                    </form>
+              </div>
+        </section>
+    </main>
+    <script src="../static/js/update.js"></script>
+</body>
 {% endblock %}
