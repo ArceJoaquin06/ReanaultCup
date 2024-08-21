@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, flash
+from flask import Flask, render_template, request, redirect, url_for, flash, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, login_user, login_required, logout_user, UserMixin
 import os
@@ -58,6 +58,38 @@ def Football():
     for registro in registros:
         datos.append({"nombre":registro.nombre_equipo, "grupo":registro.grupo_equipo, "pts":registro.puntos_equipo, "pg":registro.partidos_ganados, "pe": registro.partidos_empatados, "pp":registro.partidos_perdidos})
     return render_template('Futbol.html', datos=datos)
+
+@app.route('/update/<id>', methods=['PUT'])
+def update(id):
+    update_equipo = Equipos.query.get(id)
+    if not update_equipo:
+        return jsonify({"error": "Equipo no encontrado"}), 404
+    
+    if "puntos_equipo" in request.json:
+        update_equipo.puntos_equipo = request.json["puntos_equipo"]
+
+    if "partidos_ganados" in request.json:
+        update_equipo.partidos_ganados = request.json["partidos_ganados"]
+    
+    db.session.commit()
+
+    data_serializada = {"id": update_equipo.id, "nombre_equipo": update_equipo.nombre_equipo, "puntos_equipo": update_equipo.puntos_equipo, "partidos_ganados": update_equipo.partidos_ganados}
+    return jsonify(data_serializada)
+
+@app.route('/buscar_id', methods=['GET'])
+def buscar_id():
+    nombre_equipo = request.args.get('nombre')
+    equipo = Equipos.query.filter_by(nombre_equipo=nombre_equipo).first()
+    if equipo:
+        return jsonify({"id": equipo.id})
+    else:
+        return jsonify({"id": None})
+    
+@app.route('/obtener_equipos', methods=['GET'])
+def obtener_equipos():
+    equipos = Equipos.query.all()
+    equipos_json = [{"id": equipo.id, "nombre_equipo": equipo.nombre_equipo} for equipo in equipos]
+    return jsonify(equipos_json)
 
 @app.route('/register')
 def Register():
