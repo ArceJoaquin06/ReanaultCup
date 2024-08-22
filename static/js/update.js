@@ -11,11 +11,15 @@ console.log(resultado);
 document.getElementById("id").value = resultado["id"];
 document.getElementById("puntos_equipo").value = resultado["puntos_equipo"];
 document.getElementById("partidos_ganados").value = resultado["partidos_ganados"];
+document.getElementById("partidos_empatados").value = resultado["partidos_empatados"];
+document.getElementById("partidos_perdidos").value = resultado["partidos_perdidos"];
 
 function modificar() {
     let id = document.getElementById("id").value;
     let ptsForm = document.getElementById("puntos_equipo").value;
     let partidosGanadosForm = document.getElementById("partidos_ganados").value;
+    let partidosEmpatadosForm = document.getElementById("partidos_empatados").value;
+    let partidosPerdidosForm = document.getElementById("partidos_perdidos").value;
 
     let equipo = {};
 
@@ -25,6 +29,14 @@ function modificar() {
 
     if (partidosGanadosForm) {
         equipo.partidos_ganados = partidosGanadosForm;
+    }
+
+    if (partidosEmpatadosForm) {
+        equipo.partidos_empatados = partidosEmpatadosForm;
+    }
+
+    if (partidosPerdidosForm) {
+        equipo.partidos_perdidos = partidosPerdidosForm;
     }
 
     let url = "http://localhost:3500/update/" + id;

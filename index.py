@@ -70,6 +70,12 @@ def update(id):
 
     if "partidos_ganados" in request.json:
         update_equipo.partidos_ganados = request.json["partidos_ganados"]
+
+    if "partidos_empatados" in request.json:
+        update_equipo.partidos_empatados = request.json["partidos_empatados"]
+
+    if "partidos_perdidos" in request.json:
+        update_equipo.partidos_perdidos = request.json["partidos_perdidos"]
     
     db.session.commit()
 
@@ -112,6 +118,11 @@ def Canteen():
 def Mirror():
     return render_template('FutMirror.html')
 
+@app.route('/selectMirror')
+@login_required
+def Select():
+    return render_template('SelectMirror.html')
+
 @app.route('/login', methods=['POST'])
 def login():
     username = request.form['username']
@@ -122,7 +133,7 @@ def login():
     if user:
         login_user(user)
         flash('Login successful!', 'success')
-        return redirect(url_for('Mirror'))
+        return redirect(url_for('Select'))
     else:
         flash('Invalid username or password', 'danger')
         return redirect(url_for('Register'))

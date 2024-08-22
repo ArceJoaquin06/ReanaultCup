@@ -1,4 +1,4 @@
-<title>{% block title %}Actualización{% endblock %}</title>
+<title>{% block title %}Fase de Grupos{% endblock %}</title>
 
 {% block extra_head %}
     <link rel="stylesheet" href="{{ url_for('static', filename='css/FutMirror.css') }}">
@@ -31,6 +31,16 @@
                 <div>
                     <div for="partidos_ganados">Partidos Ganados</div>
                     <input type="number" name="partidos_ganados" id="partidos_ganados">
+                </div>
+
+                <div>
+                    <div for="partidos_empatados">Partidos Empatados</div>
+                    <input type="number" name="partidos_empatados" id="partidos_empatados">
+                </div>
+
+                <div>
+                    <div for="partidos_perdidos">Partidos Perdidos</div>
+                    <input type="number" name="partidos_perdidos" id="partidos_perdidos"> 
                 </div>
 
                 <button class="modificar" type="button" onclick="modificar()">Modificar</button>
